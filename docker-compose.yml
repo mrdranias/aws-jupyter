@@ -51,7 +51,6 @@ services:
 
       # Jupyter token/password
       JUPYTER_TOKEN: "${JUPYTER_TOKEN}"   
-      
     volumes:
       - ./notebooks:/app/notebooks
     networks:
