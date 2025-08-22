@@ -43,6 +43,15 @@ services:
       - "8888"
     env_file:
       - .env
+    environment:
+      # Proxy routing + TLS
+      VIRTUAL_HOST: "${JUPYTER_DOMAIN}"
+      LETSENCRYPT_HOST: "${JUPYTER_DOMAIN}"
+      LETSENCRYPT_EMAIL: "${LE_EMAIL}"
+
+      # Jupyter token/password
+      JUPYTER_TOKEN: "${JUPYTER_TOKEN}"   
+      
     volumes:
       - ./notebooks:/app/notebooks
     networks:
